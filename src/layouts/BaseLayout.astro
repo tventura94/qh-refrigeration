@@ -8,16 +8,16 @@ interface Props {
 }
 
 const {
-  title = "North Peak Heating & Cooling | Anchorage HVAC Experts",
-  description = "Affordable, honest HVAC service across Anchorage, Alaska. Heating, cooling, installs, and 24/7 emergency repair from a trusted local team.",
+  title = "QH Refrigeration & Cooling | Charlotte, NC Commercial Refrigeration & HVAC",
+  description = "Charlotte's specialist team for commercial refrigeration, walk-in coolers, ice machines, and residential cooling. 24/7 service across Mecklenburg County and the greater Queen City.",
   image = "/og-img.png",
 } = Astro.props;
 
-const absoluteBase = "https://north-peak-hvac.netlify.app";
+const absoluteBase = "https://qh-refrigeration.netlify.app";
 const ogImage = new URL(image, absoluteBase).href;
 const canonical = new URL(Astro.url.pathname, absoluteBase).href;
 
-const siteName = "North Peak Heating & Cooling";
+const siteName = "QH Refrigeration & Cooling";
 ---
 
 <!doctype html>
@@ -32,7 +32,7 @@ const siteName = "North Peak Heating & Cooling";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200;12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -40,7 +40,6 @@ const siteName = "North Peak Heating & Cooling";
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
 
-    <!-- Open Graph: Facebook, Instagram (link previews), LinkedIn, Messenger, Slack, Discord, iMessage, WhatsApp -->
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -54,14 +53,13 @@ const siteName = "North Peak Heating & Cooling";
     <meta property="og:image:height" content="909" />
     <meta property="og:image:alt" content={siteName} />
 
-    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={siteName} />
   </head>
-  <body class="bg-white text-slate-900">
+  <body class="bg-[var(--color-cream)] text-[var(--color-ink)]">
     <slot />
   </body>
 </html>

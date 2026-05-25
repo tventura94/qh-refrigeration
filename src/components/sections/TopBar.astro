@@ -1,36 +1,45 @@
 ---
-// Placeholders - swap with the real business contact details before launch.
-const phone = "(907) 555-0123";
-const email = "hello@northpeakhvac.com";
+const phone = "(704) 555-0142";
+const email = "hello@qhrefrigeration.com";
 ---
 
-<div class="bg-[var(--color-navy-dark)] text-slate-200 text-xs">
+<div class="bg-[var(--color-ink-deep)] text-[var(--color-cyan-soft)] text-xs">
   <div
     class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-3"
   >
-    <div class="flex items-center gap-5 font-medium">
-      <span>
-        Providing Affordable HVAC Services in Anchorage, AK & Surrounding Areas
+    <div class="flex items-center gap-5">
+      <span class="flex items-center gap-2 font-mono uppercase tracking-[0.18em] text-[10px]">
+        <span class="relative flex w-2 h-2">
+          <span class="absolute inset-0 rounded-full bg-[var(--color-cyan)] ice-shimmer"></span>
+          <span class="relative w-2 h-2 rounded-full bg-[var(--color-cyan)]"></span>
+        </span>
+        <span class="text-white/80">Now serving Charlotte / Mecklenburg / Union / Cabarrus</span>
       </span>
     </div>
     <div class="flex items-center gap-4">
       <a
         href={`tel:${phone.replace(/[^0-9+]/g, "")}`}
-        class="hidden md:inline text-slate-400 hover:text-white transition-colors"
+        class="hidden md:inline font-mono text-white/80 hover:text-[var(--color-cyan)] transition-colors"
       >
         {phone}
       </a>
-      <span class="hidden md:inline text-slate-600">|</span>
-      <span class="hidden md:inline text-slate-300">BBB Accredited</span>
-      <div class="flex items-center gap-3 text-slate-300">
-        <a href="#" aria-label="Facebook" class="hover:text-white">
+      <span class="hidden md:inline text-white/20">/</span>
+      <a
+        href={`mailto:${email}`}
+        class="hidden md:inline font-mono text-white/80 hover:text-[var(--color-cyan)] transition-colors lowercase"
+      >
+        {email}
+      </a>
+      <span class="hidden md:inline text-white/20">/</span>
+      <div class="flex items-center gap-3 text-white/70">
+        <a href="#" aria-label="Facebook" class="hover:text-[var(--color-cyan)] transition-colors">
           <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
             <path
               d="M22 12a10 10 0 10-11.6 9.9v-7H8v-3h2.4V9.4c0-2.4 1.4-3.7 3.6-3.7 1 0 2.1.2 2.1.2v2.3h-1.2c-1.2 0-1.6.7-1.6 1.5V12H16l-.4 3h-2.2v7A10 10 0 0022 12z"
             ></path>
           </svg>
         </a>
-        <a href="#" aria-label="Instagram" class="hover:text-white">
+        <a href="#" aria-label="Instagram" class="hover:text-[var(--color-cyan)] transition-colors">
           <svg
             class="w-3.5 h-3.5"
             fill="none"
@@ -43,7 +52,7 @@ const email = "hello@northpeakhvac.com";
             <circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle>
           </svg>
         </a>
-        <a href="#" aria-label="Google" class="hover:text-white">
+        <a href="#" aria-label="Google" class="hover:text-[var(--color-cyan)] transition-colors">
           <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
             <path
               d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 01-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3z"

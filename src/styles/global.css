@@ -1,19 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #0c2340;
-  --color-navy-dark: #081628;
-  --color-navy-soft: #14365a;
-  --color-accent: #e63329;
-  --color-accent-soft: #f97316;
-  --color-mint: #cfe6e8;
-  --color-mint-dark: #a9cfd2;
-  --color-ink: #0f172a;
-  --color-muted: #475569;
+  --color-ink: #0a1218;
+  --color-ink-soft: #142231;
+  --color-ink-deep: #050a10;
+  --color-cyan: #06b6d4;
+  --color-cyan-deep: #0e7490;
+  --color-cyan-soft: #cffafe;
+  --color-frost: #ecfeff;
+  --color-ember: #f97316;
+  --color-ember-deep: #c2410c;
+  --color-steel: #475569;
+  --color-steel-soft: #94a3b8;
+  --color-cream: #faf8f3;
 
-  --font-sans: "Inter", "Manrope", ui-sans-serif, system-ui, -apple-system,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 
 html {
@@ -23,9 +26,10 @@ html {
 body {
   font-family: var(--font-sans);
   color: var(--color-ink);
-  background-color: #ffffff;
+  background-color: var(--color-cream);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv01";
 }
 
 h1,
@@ -33,5 +37,30 @@ h2,
 h3,
 h4 {
   font-family: var(--font-display);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.025em;
+  font-variation-settings: "wdth" 105;
+}
+
+.font-mono,
+[class*="font-mono"] {
+  font-family: var(--font-mono);
+  font-feature-settings: "ss01";
+}
+
+::selection {
+  background: var(--color-cyan);
+  color: white;
+}
+
+@keyframes ice-shimmer {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.ice-shimmer {
+  animation: ice-shimmer 4s ease-in-out infinite;
 }
