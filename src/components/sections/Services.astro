@@ -1,0 +1,86 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const services = [
+  {
+    title: "Heating Repair",
+    body: "Furnaces, boilers, and heat pumps diagnosed and repaired by techs who know Alaska winters.",
+    image:
+      "https://images.unsplash.com/photo-1561400555-786780284b67?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "AC & Heat Pump Service",
+    body: "Cold climate heat pumps, mini splits, and central AC tuned for our short but warm summers.",
+    image:
+      "https://images.unsplash.com/photo-1718203862467-c33159fdc504?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "New System Installation",
+    body: "Right sized, professionally installed equipment from the brands we stand behind.",
+    image:
+      "https://images.unsplash.com/photo-1642749776312-aa42ce20c9f5?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Emergency Service",
+    body: "No heat at midnight? We answer the phone and dispatch a tech around the clock.",
+    image:
+      "https://images.unsplash.com/photo-1748442001865-5583ec02ae22?auto=format&fit=crop&w=800&q=80",
+  },
+];
+---
+
+<section id="services" class="bg-white py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-center">
+      <SectionHeading
+        kicker="Our Services"
+        title="Expert HVAC services across Anchorage"
+        lead="Repair, replace, maintain. Whatever your home needs to stay comfortable, our team has done it hundreds of times."
+      />
+    </div>
+
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {
+        services.map((service) => (
+          <article class="group rounded-2xl overflow-hidden border border-slate-200 bg-white hover:shadow-xl transition-all">
+            <div class="relative h-44 overflow-hidden">
+              <img
+                src={service.image}
+                alt={service.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-navy)]/70 via-transparent to-transparent" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-[var(--color-navy)]">
+                {service.title}
+              </h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                {service.body}
+              </p>
+              <a
+                href="#contact"
+                class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-accent)] hover:gap-2.5 transition-all"
+              >
+                Learn more
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

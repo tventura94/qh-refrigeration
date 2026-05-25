@@ -1,0 +1,64 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const signs = [
+  {
+    title: "Cold rooms or uneven heat",
+    body: "Some rooms feel like a freezer while others stay toasty. Often a sign of duct leaks, a failing blower, or a zoning problem.",
+  },
+  {
+    title: "Higher than normal energy bills",
+    body: "If your bill keeps climbing without any change in habits, your system is likely losing efficiency and working overtime to keep up.",
+  },
+  {
+    title: "Strange sounds or smells",
+    body: "Banging, rattling, or burning odors usually mean something inside is loose, worn, or unsafe. Shut it down and call us.",
+  },
+  {
+    title: "Short cycling or constant runtime",
+    body: "Equipment that turns on and off rapidly, or never stops running, is often dealing with a sensor, refrigerant, or sizing issue.",
+  },
+];
+---
+
+<section class="bg-slate-50 py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-center">
+      <SectionHeading
+        kicker="Warning Signs"
+        title="Is your HVAC system trying to tell you something?"
+        lead="Most heating and cooling problems start small. Catching them early saves money and keeps your family comfortable through the long Alaska winter."
+      />
+    </div>
+
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {
+        signs.map((sign) => (
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
+            <span class="w-11 h-11 rounded-lg bg-[var(--color-accent)]/10 text-[var(--color-accent)] flex items-center justify-center">
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v2m0 4h.01M5 19h14a2 2 0 001.74-3L13.74 4a2 2 0 00-3.48 0L3.26 16A2 2 0 005 19z"
+                />
+              </svg>
+            </span>
+            <h3 class="mt-5 text-lg font-bold text-[var(--color-navy)] leading-snug">
+              {sign.title}
+            </h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+              {sign.body}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

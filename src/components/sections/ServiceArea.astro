@@ -1,0 +1,79 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const neighborhoods = [
+  "Downtown",
+  "Midtown",
+  "Spenard",
+  "Sand Lake",
+  "Hillside",
+  "Eagle River",
+  "Chugiak",
+  "South Anchorage",
+  "Government Hill",
+  "Mountain View",
+  "Muldoon",
+  "Turnagain",
+  "Bear Valley",
+  "Rabbit Creek",
+  "Girdwood",
+  "Peters Creek",
+  "JBER",
+  "Westchester",
+];
+---
+
+<section id="service-area" class="bg-slate-50 py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-center">
+      <SectionHeading
+        kicker="Service Area"
+        title="HVAC services throughout Anchorage and South Central Alaska"
+        lead="From the Hillside down to Downtown, out to Eagle River, and south to Girdwood. If you do not see your neighborhood listed, give us a call."
+      />
+    </div>
+
+    <div
+      class="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 max-w-5xl mx-auto"
+    >
+      {
+        neighborhoods.map((name) => (
+          <div class="bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm font-semibold text-[var(--color-navy)] flex items-center gap-2 hover:border-[var(--color-accent)]/40 hover:bg-[var(--color-accent)]/5 transition-colors">
+            <svg
+              class="w-4 h-4 text-[var(--color-accent)] shrink-0"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+            <span>{name}</span>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-10 text-center">
+      <p class="text-sm text-slate-600">
+        Not sure if we cover your area?
+        <a
+          href="tel:9075550123"
+          class="font-semibold text-[var(--color-accent)] hover:underline"
+        >
+          Call (907) 555-0123
+        </a>
+        and we will let you know.
+      </p>
+    </div>
+  </div>
+</section>
