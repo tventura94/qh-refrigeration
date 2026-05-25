@@ -24,9 +24,9 @@ const tickerItems = [
 
 <header class="sticky top-0 z-50 bg-[var(--color-paper)]/95 backdrop-blur supports-[backdrop-filter]:bg-[var(--color-paper)]/85">
   <div class="bg-[var(--color-ink)] text-[var(--color-paper)] overflow-hidden border-b border-[var(--color-ink)]">
-    <div class="flex whitespace-nowrap font-mono text-[10px] tracking-[0.32em] py-2 ticker">
+    <div class="flex whitespace-nowrap font-mono text-[9px] sm:text-[10px] tracking-[0.28em] sm:tracking-[0.32em] py-2 ticker">
       {[...tickerItems, ...tickerItems, ...tickerItems].map((item) => (
-        <span class="px-6 inline-flex items-center gap-6">
+        <span class="px-4 sm:px-6 inline-flex items-center gap-3 sm:gap-6">
           {item}
           <span class="text-[var(--color-ember-light)]">◆</span>
         </span>
@@ -34,10 +34,10 @@ const tickerItems = [
     </div>
   </div>
 
-  <div class="rule-double">
-    <div class="max-w-[1400px] mx-auto px-5 sm:px-8 py-5 flex items-center justify-between gap-6 flex-nowrap">
-      <a href="#top" class="text-[var(--color-ink)] shrink-0">
-        <Logo class="h-12 md:h-14 w-auto" />
+  <div class="rule-double relative">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-5 flex items-center justify-between gap-3 sm:gap-6 flex-nowrap">
+      <a href="#top" class="text-[var(--color-ink)] shrink-0 min-w-0">
+        <Logo class="h-9 sm:h-12 md:h-14 w-auto max-w-[200px] sm:max-w-none" />
       </a>
 
       <nav class="hidden lg:flex items-center gap-1 shrink-0">
@@ -52,7 +52,7 @@ const tickerItems = [
         ))}
       </nav>
 
-      <div class="flex items-center gap-3 shrink-0">
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         <a
           href="tel:7045550142"
           class="hidden md:flex flex-col items-end leading-tight border-r border-[var(--color-rule)] pr-4"
@@ -65,12 +65,56 @@ const tickerItems = [
           </span>
         </a>
         <a
+          href="tel:7045550142"
+          aria-label="Call dispatch"
+          class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-[var(--color-ink)] text-[var(--color-ink)] hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)] transition-colors"
+        >
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.28a2 2 0 011.94 1.515l.7 2.8a2 2 0 01-.45 1.81L7.91 11.09a16 16 0 005 5l2.165-1.56a2 2 0 011.81-.45l2.8.7A2 2 0 0121 16.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+        </a>
+        <a
           href="#contact"
-          class="inline-flex items-center gap-2 bg-[var(--color-ember)] text-[var(--color-paper)] font-mono text-[11px] uppercase tracking-[0.18em] px-5 py-3 hover:bg-[var(--color-ember-deep)] transition-colors pulse-ember"
+          class="hidden sm:inline-flex items-center gap-2 bg-[var(--color-ember)] text-[var(--color-paper)] font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.18em] px-4 sm:px-5 py-3 hover:bg-[var(--color-ember-deep)] transition-colors pulse-ember whitespace-nowrap"
         >
           <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-paper)]"></span>
           Book Service
         </a>
+
+        <details class="mobile-menu lg:hidden relative">
+          <summary
+            aria-label="Open menu"
+            class="inline-flex items-center justify-center w-11 h-11 bg-[var(--color-ink)] text-[var(--color-paper)] cursor-pointer hover:bg-[var(--color-arctic-deep)] transition-colors"
+          >
+            <svg class="icon-open w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25">
+              <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+            <svg class="icon-close w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25">
+              <path stroke-linecap="round" d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </summary>
+          <nav class="absolute right-0 top-[calc(100%+12px)] w-[min(92vw,22rem)] bg-[var(--color-paper)] border-2 border-[var(--color-ink)] shadow-[6px_6px_0_0_var(--color-ink)] p-2">
+            {navItems.map((item) => (
+              <a
+                href={item.href}
+                class="flex items-center justify-between px-4 py-3.5 font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--color-ink)] hover:bg-[var(--color-paper-deep)] border-b border-[var(--color-rule)] last:border-0"
+              >
+                <span>
+                  <span class="text-[var(--color-ember)] mr-2">/</span>
+                  {item.label}
+                </span>
+                <span class="text-[var(--color-ember)]">→</span>
+              </a>
+            ))}
+            <a
+              href="#contact"
+              class="mt-2 flex items-center justify-center gap-2 bg-[var(--color-ember)] text-[var(--color-paper)] font-mono text-[11px] uppercase tracking-[0.18em] px-4 py-3.5 hover:bg-[var(--color-ember-deep)] transition-colors"
+            >
+              <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-paper)]"></span>
+              Book Service
+            </a>
+          </nav>
+        </details>
       </div>
     </div>
   </div>

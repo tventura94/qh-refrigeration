@@ -23,12 +23,14 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--color-paper);
+  overflow-x: hidden;
 }
 
 body {
   font-family: var(--font-sans);
   color: var(--color-ink);
   background-color: var(--color-paper);
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image:
@@ -102,4 +104,29 @@ h1, h2, h3, h4, h5 {
 
 @media (prefers-reduced-motion: reduce) {
   .rise, .ticker, .pulse-ember { animation: none; }
+}
+
+details.mobile-menu > summary {
+  list-style: none;
+}
+details.mobile-menu > summary::-webkit-details-marker {
+  display: none;
+}
+details.mobile-menu[open] .icon-open { display: none; }
+details.mobile-menu:not([open]) .icon-close { display: none; }
+details.mobile-menu[open] > nav { animation: rise-in 0.25s ease-out both; }
+
+input, select, textarea, button {
+  font: inherit;
+}
+
+@media (max-width: 640px) {
+  .form-shadow {
+    box-shadow: 4px 4px 0 0 var(--color-ink);
+  }
+}
+@media (min-width: 641px) {
+  .form-shadow {
+    box-shadow: 8px 8px 0 0 var(--color-ink);
+  }
 }

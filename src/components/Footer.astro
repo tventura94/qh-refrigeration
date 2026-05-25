@@ -5,11 +5,11 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="bg-[var(--color-ink)] text-[var(--color-paper)]">
-  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 pt-16 pb-10">
-    <div class="grid md:grid-cols-[2fr_1fr_1fr] gap-12 lg:gap-20">
-      <div>
+  <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-8 sm:pb-10">
+    <div class="grid sm:grid-cols-2 md:grid-cols-[2fr_1fr_1fr] gap-10 sm:gap-12 lg:gap-20">
+      <div class="sm:col-span-2 md:col-span-1">
         <div class="text-[var(--color-paper)]">
-          <Logo class="h-12 w-auto" />
+          <Logo class="h-10 sm:h-12 w-auto max-w-full" />
         </div>
         <p class="mt-5 text-[var(--color-paper)]/70 text-sm leading-relaxed max-w-md">
           Independent, owner operated, and tired of seeing local shops blow
@@ -46,9 +46,9 @@ const year = new Date().getFullYear();
       </div>
     </div>
 
-    <div class="mt-14 pt-6 border-t border-[var(--color-paper)]/15 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-paper)]/55">
-      <span>&copy; {year} QH Refrigeration, Heating & Cooling · NC HVAC No. 31402</span>
-      <span class="flex items-center gap-5">
+    <div class="mt-10 sm:mt-14 pt-5 sm:pt-6 border-t border-[var(--color-paper)]/15 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 font-mono text-[10px] uppercase tracking-[0.22em] sm:tracking-[0.28em] text-[var(--color-paper)]/55">
+      <span>&copy; {year} QH Refrigeration · NC HVAC No. 31402</span>
+      <span class="flex items-center gap-4 sm:gap-5 flex-wrap">
         <a href="#" class="hover:text-[var(--color-ember-light)] transition-colors">Privacy</a>
         <a href="#" class="hover:text-[var(--color-ember-light)] transition-colors">Terms</a>
         <a href="#top" class="hover:text-[var(--color-ember-light)] transition-colors">Back to top ↑</a>
