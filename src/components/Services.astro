@@ -1,0 +1,88 @@
+---
+const services = [
+  {
+    number: "I",
+    kicker: "Commercial · Cold Side",
+    title: "Refrigeration",
+    body: "Walk in coolers, freezers, reach ins, prep tables, and ice machines. Restaurants, breweries, grocers, and cold storage across Charlotte.",
+    items: ["Walk in service", "Ice machines", "Reach ins", "Compressor swaps", "Leak detection"],
+    tint: "arctic",
+  },
+  {
+    number: "II",
+    kicker: "Summer Side",
+    title: "Cooling",
+    body: "Residential and light commercial cooling tuned to keep up with Carolina humidity and triple digit August afternoons.",
+    items: ["Central AC", "Heat pumps", "Mini splits", "Condenser repair", "Ductwork"],
+    tint: "arctic",
+  },
+  {
+    number: "III",
+    kicker: "Winter Side",
+    title: "Heating",
+    body: "Furnaces, heat pump heat strips, and gas conversions, dialed in for the handful of cold weeks the Carolinas actually get.",
+    items: ["Gas furnaces", "Heat pumps", "Aux heat", "Combustion checks", "Thermostats"],
+    tint: "ember",
+  },
+];
+---
+
+<section id="services" class="relative bg-[var(--color-paper-deep)] border-y border-[var(--color-rule)]">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 py-20 lg:py-28">
+    <header class="grid lg:grid-cols-[1fr_2fr] gap-8 items-end">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.32em] text-[var(--color-ember)]">
+          ◇ Section A · Services
+        </p>
+        <h2 class="mt-4 font-display text-[clamp(2.2rem,5vw,4.5rem)] leading-[0.95] text-[var(--color-ink)]" style="font-variation-settings: 'opsz' 144, 'wght' 700">
+          Three trades.<br />
+          <span class="italic font-light" style="font-variation-settings: 'opsz' 144, 'wght' 300">One truck.</span>
+        </h2>
+      </div>
+      <p class="font-display text-lg lg:text-xl leading-relaxed text-[var(--color-ink-soft)] max-w-xl lg:justify-self-end" style="font-variation-settings: 'opsz' 36, 'wght' 400">
+        Most shops do refrigeration <em>or</em> HVAC. We do both, which means
+        one technician, one invoice, and one company on the hook when the
+        kitchen needs help on a Saturday night.
+      </p>
+    </header>
+
+    <div class="mt-16 grid md:grid-cols-3 gap-px bg-[var(--color-ink)] border border-[var(--color-ink)]">
+      {services.map((service) => (
+        <article class="group bg-[var(--color-paper)] p-8 lg:p-10 flex flex-col hover:bg-[var(--color-paper-edge)] transition-colors duration-300">
+          <div class="flex items-start justify-between">
+            <span
+              class={`font-display text-7xl lg:text-8xl leading-none ${service.tint === "ember" ? "text-[var(--color-ember)]" : "text-[var(--color-arctic)]"}`}
+              style="font-variation-settings: 'opsz' 144, 'wght' 900, 'SOFT' 50"
+            >
+              {service.number}
+            </span>
+            <span class="font-mono text-[9px] uppercase tracking-[0.28em] text-[var(--color-ink-muted)] text-right max-w-[8rem] leading-tight">
+              {service.kicker}
+            </span>
+          </div>
+
+          <h3 class="mt-8 font-display text-4xl font-bold text-[var(--color-ink)]" style="font-variation-settings: 'opsz' 96, 'wght' 800">
+            {service.title}
+          </h3>
+          <p class="mt-3 text-[var(--color-ink-soft)] leading-relaxed">
+            {service.body}
+          </p>
+
+          <ul class="mt-6 space-y-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-ink)]">
+            {service.items.map((item) => (
+              <li class="flex items-center gap-2">
+                <span class={service.tint === "ember" ? "text-[var(--color-ember)]" : "text-[var(--color-arctic)]"}>◆</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          <a href="#contact" class="mt-auto pt-8 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--color-ink)] group-hover:gap-3 transition-all">
+            <span class="border-b border-[var(--color-ink)]">Get this service</span>
+            <span class={service.tint === "ember" ? "text-[var(--color-ember)]" : "text-[var(--color-arctic)]"}>→</span>
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,66 @@
+---
+const columns = [
+  {
+    region: "Inside the loop",
+    places: ["Uptown", "South End", "NoDa", "Plaza Midwood", "Dilworth", "Elizabeth"],
+  },
+  {
+    region: "South + East",
+    places: ["Myers Park", "SouthPark", "Ballantyne", "Matthews", "Mint Hill", "Pineville"],
+  },
+  {
+    region: "North + Lake",
+    places: ["University City", "Huntersville", "Cornelius", "Davidson", "Concord", "Steele Creek"],
+  },
+];
+---
+
+<section id="service-area" class="relative bg-[var(--color-paper)]">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-[1fr_2fr] gap-10 items-end">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.32em] text-[var(--color-ember)]">
+          ◇ Section C · Service area
+        </p>
+        <h2 class="mt-4 font-display text-[clamp(2.2rem,5vw,4.5rem)] leading-[0.95] text-[var(--color-ink)]" style="font-variation-settings: 'opsz' 144, 'wght' 700">
+          Where we run<br />
+          <span class="italic font-light" style="font-variation-settings: 'opsz' 144, 'wght' 300">our trucks.</span>
+        </h2>
+      </div>
+      <p class="font-display text-lg lg:text-xl leading-relaxed text-[var(--color-ink-soft)] max-w-xl lg:justify-self-end" style="font-variation-settings: 'opsz' 36, 'wght' 400">
+        Mecklenburg, Union, and Cabarrus counties. If you do not see your
+        neighborhood, call us. Odds are we have already been there this week.
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-10 lg:gap-16">
+      {columns.map((col) => (
+        <div>
+          <h3 class="font-mono text-[11px] uppercase tracking-[0.28em] text-[var(--color-ember)] pb-3 rule-double inline-block pr-12">
+            {col.region}
+          </h3>
+          <ul class="mt-6 space-y-3.5">
+            {col.places.map((place) => (
+              <li class="flex items-baseline gap-3">
+                <span class="font-display text-2xl text-[var(--color-ink)]" style="font-variation-settings: 'opsz' 36, 'wght' 600">
+                  {place}
+                </span>
+                <span class="flex-1 dotted-leader h-2"></span>
+                <span class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-ink-muted)]">
+                  Covered
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-16 rule pt-6 flex flex-wrap items-baseline justify-between gap-4 font-mono text-[11px] uppercase tracking-[0.28em] text-[var(--color-ink-muted)]">
+      <span>Not on the list?</span>
+      <a href="tel:7045550142" class="text-[var(--color-ember)] hover:text-[var(--color-ember-deep)]">
+        Call 704·555·0142 →
+      </a>
+    </div>
+  </div>
+</section>

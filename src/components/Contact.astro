@@ -1,0 +1,157 @@
+---
+const equipmentOptions = [
+  "Walk in cooler / freezer",
+  "Ice machine",
+  "Reach in / prep table",
+  "Central AC",
+  "Heat pump",
+  "Furnace",
+  "Mini split",
+  "Not sure yet",
+];
+---
+
+<section id="contact" class="relative bg-[var(--color-paper-deep)] border-t border-[var(--color-rule)]">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20">
+    <aside class="space-y-10">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.32em] text-[var(--color-ember)]">
+          ◇ Section D · Get in touch
+        </p>
+        <h2 class="mt-4 font-display text-[clamp(2.4rem,5vw,5rem)] leading-[0.95] text-[var(--color-ink)]" style="font-variation-settings: 'opsz' 144, 'wght' 700">
+          Tell us what's<br />
+          <span class="italic font-light" style="font-variation-settings: 'opsz' 144, 'wght' 300">going wrong.</span>
+        </h2>
+        <p class="mt-5 text-[var(--color-ink-soft)] text-base leading-relaxed">
+          The faster we know what equipment is acting up, the faster we can
+          send the right truck and the right tech. Forms go straight to
+          dispatch and we answer same business day, usually within an hour.
+        </p>
+      </div>
+
+      <ul class="space-y-5">
+        <li>
+          <div class="font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-ink-muted)]">Dispatch</div>
+          <a href="tel:7045550142" class="font-display text-3xl font-bold text-[var(--color-ink)] hover:text-[var(--color-ember)] transition-colors tabular-nums">
+            704 · 555 · 0142
+          </a>
+        </li>
+        <li>
+          <div class="font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-ink-muted)]">Email</div>
+          <a href="mailto:dispatch@qhrefrigeration.com" class="font-display text-xl text-[var(--color-ink)] hover:text-[var(--color-ember)] transition-colors" style="font-variation-settings: 'opsz' 36, 'wght' 500">
+            dispatch@qhrefrigeration.com
+          </a>
+        </li>
+        <li>
+          <div class="font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-ink-muted)]">Shop</div>
+          <p class="font-display text-xl text-[var(--color-ink)]" style="font-variation-settings: 'opsz' 36, 'wght' 500">
+            1408 Central Avenue<br />Charlotte, NC 28205
+          </p>
+        </li>
+        <li>
+          <div class="font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-ink-muted)]">Hours</div>
+          <p class="font-display text-xl text-[var(--color-ink)]" style="font-variation-settings: 'opsz' 36, 'wght' 500">
+            Office · Mon to Fri, 7a to 6p<br />
+            Emergency · 24 / 7 / 365
+          </p>
+        </li>
+      </ul>
+    </aside>
+
+    <form
+      name="service-request"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="bg-[var(--color-paper)] border border-[var(--color-ink)] p-8 lg:p-10 shadow-[8px_8px_0_0_var(--color-ink)]"
+    >
+      <input type="hidden" name="form-name" value="service-request" />
+      <p class="hidden">
+        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+
+      <div class="flex items-baseline justify-between border-b-2 border-[var(--color-ink)] pb-3">
+        <h3 class="font-display text-2xl font-bold text-[var(--color-ink)]" style="font-variation-settings: 'opsz' 36, 'wght' 700">
+          Service Request
+        </h3>
+        <span class="font-mono text-[9px] uppercase tracking-[0.28em] text-[var(--color-ink-muted)]">
+          Form QH·001
+        </span>
+      </div>
+
+      <div class="mt-7 grid sm:grid-cols-2 gap-5">
+        <label class="block">
+          <span class="font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-ink-muted)]">Your name</span>
+          <input
+            name="name"
+            type="text"
+            required
+            class="mt-2 w-full bg-transparent border-0 border-b border-[var(--color-ink)] py-2 font-display text-lg text-[var(--color-ink)] focus:outline-none focus:border-[var(--color-ember)] transition-colors"
+          />
+        </label>
+        <label class="block">
+          <span class="font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-ink-muted)]">Business (optional)</span>
+          <input
+            name="business"
+            type="text"
+            class="mt-2 w-full bg-transparent border-0 border-b border-[var(--color-ink)] py-2 font-display text-lg text-[var(--color-ink)] focus:outline-none focus:border-[var(--color-ember)] transition-colors"
+          />
+        </label>
+        <label class="block">
+          <span class="font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-ink-muted)]">Phone</span>
+          <input
+            name="phone"
+            type="tel"
+            required
+            class="mt-2 w-full bg-transparent border-0 border-b border-[var(--color-ink)] py-2 font-display text-lg text-[var(--color-ink)] tabular-nums focus:outline-none focus:border-[var(--color-ember)] transition-colors"
+          />
+        </label>
+        <label class="block">
+          <span class="font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-ink-muted)]">Email</span>
+          <input
+            name="email"
+            type="email"
+            required
+            class="mt-2 w-full bg-transparent border-0 border-b border-[var(--color-ink)] py-2 font-display text-lg text-[var(--color-ink)] focus:outline-none focus:border-[var(--color-ember)] transition-colors"
+          />
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-ink-muted)]">Equipment</span>
+          <select
+            name="equipment"
+            required
+            class="mt-2 w-full bg-transparent border-0 border-b border-[var(--color-ink)] py-2 font-display text-lg text-[var(--color-ink)] focus:outline-none focus:border-[var(--color-ember)] transition-colors"
+          >
+            <option value="">Select equipment</option>
+            {equipmentOptions.map((opt) => (
+              <option value={opt}>{opt}</option>
+            ))}
+          </select>
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-ink-muted)]">What's going on?</span>
+          <textarea
+            name="message"
+            rows="4"
+            required
+            class="mt-2 w-full bg-transparent border border-[var(--color-ink)] p-3 font-sans text-base text-[var(--color-ink)] leading-relaxed focus:outline-none focus:border-[var(--color-ember)] transition-colors resize-none"
+            placeholder="Walk in is reading 48F and not pulling down..."
+          ></textarea>
+        </label>
+      </div>
+
+      <div class="mt-8 flex flex-wrap items-center justify-between gap-4 pt-5 border-t-2 border-[var(--color-ink)]">
+        <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-ink-muted)] max-w-sm">
+          For true emergencies, please call dispatch directly so we can roll a truck immediately.
+        </p>
+        <button
+          type="submit"
+          class="group inline-flex items-center gap-3 bg-[var(--color-ink)] text-[var(--color-paper)] px-7 py-4 hover:bg-[var(--color-arctic-deep)] transition-colors"
+        >
+          <span class="font-mono text-[11px] uppercase tracking-[0.22em]">Send to dispatch</span>
+          <span class="text-[var(--color-ember-light)] group-hover:translate-x-1 transition-transform">→</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,58 @@
+---
+import Logo from "./Logo.astro";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-[var(--color-ink)] text-[var(--color-paper)]">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 pt-16 pb-10">
+    <div class="grid md:grid-cols-[2fr_1fr_1fr] gap-12 lg:gap-20">
+      <div>
+        <div class="text-[var(--color-paper)]">
+          <Logo class="h-12 w-auto" />
+        </div>
+        <p class="mt-5 text-[var(--color-paper)]/70 text-sm leading-relaxed max-w-md">
+          Independent, owner operated, and tired of seeing local shops blow
+          smoke. QH is built on cold equipment that holds temperature and
+          warm equipment that lights on the first try.
+        </p>
+        <div class="mt-6 inline-flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-ember-light)]">
+          <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-ember-light)] pulse-ember"></span>
+          Dispatch is online
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-mono text-[10px] uppercase tracking-[0.32em] text-[var(--color-paper)]/55">
+          Trades
+        </h4>
+        <ul class="mt-5 space-y-2 font-display text-lg" style="font-variation-settings: 'opsz' 36, 'wght' 500">
+          <li><a href="#services" class="hover:text-[var(--color-ember-light)] transition-colors">Refrigeration</a></li>
+          <li><a href="#services" class="hover:text-[var(--color-ember-light)] transition-colors">Cooling</a></li>
+          <li><a href="#services" class="hover:text-[var(--color-ember-light)] transition-colors">Heating</a></li>
+          <li><a href="#contact" class="hover:text-[var(--color-ember-light)] transition-colors">Emergency</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-mono text-[10px] uppercase tracking-[0.32em] text-[var(--color-paper)]/55">
+          Reach us
+        </h4>
+        <ul class="mt-5 space-y-2 font-display text-lg" style="font-variation-settings: 'opsz' 36, 'wght' 500">
+          <li><a href="tel:7045550142" class="hover:text-[var(--color-ember-light)] transition-colors tabular-nums">704·555·0142</a></li>
+          <li><a href="mailto:dispatch@qhrefrigeration.com" class="hover:text-[var(--color-ember-light)] transition-colors text-base">dispatch@qhrefrigeration.com</a></li>
+          <li class="text-[var(--color-paper)]/75 text-base">1408 Central Ave<br />Charlotte, NC 28205</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-6 border-t border-[var(--color-paper)]/15 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-paper)]/55">
+      <span>&copy; {year} QH Refrigeration, Heating & Cooling · NC HVAC No. 31402</span>
+      <span class="flex items-center gap-5">
+        <a href="#" class="hover:text-[var(--color-ember-light)] transition-colors">Privacy</a>
+        <a href="#" class="hover:text-[var(--color-ember-light)] transition-colors">Terms</a>
+        <a href="#top" class="hover:text-[var(--color-ember-light)] transition-colors">Back to top ↑</a>
+      </span>
+    </div>
+  </div>
+</footer>

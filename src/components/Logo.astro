@@ -1,0 +1,94 @@
+---
+interface Props {
+  variant?: "full" | "mark";
+  class?: string;
+}
+
+const { variant = "full", class: className = "" } = Astro.props;
+---
+
+{
+  variant === "full" ? (
+    <svg
+      viewBox="0 0 260 64"
+      xmlns="http://www.w3.org/2000/svg"
+      class={className}
+      role="img"
+      aria-label="QH Refrigeration, Heating and Cooling"
+    >
+      <g>
+        <rect x="0" y="6" width="52" height="52" rx="2" fill="currentColor" />
+        <text
+          x="26"
+          y="44"
+          text-anchor="middle"
+          font-family="Fraunces, serif"
+          font-weight="900"
+          font-size="30"
+          fill="var(--color-paper)"
+          font-style="italic"
+        >
+          QH
+        </text>
+        <line x1="26" y1="10" x2="26" y2="14" stroke="var(--color-paper)" stroke-width="1" />
+        <line x1="26" y1="50" x2="26" y2="54" stroke="var(--color-paper)" stroke-width="1" />
+      </g>
+      <g transform="translate(64, 0)" fill="currentColor">
+        <text
+          x="0"
+          y="26"
+          font-family="JetBrains Mono, monospace"
+          font-size="10"
+          letter-spacing="3"
+          font-weight="700"
+        >
+          QH REFRIGERATION
+        </text>
+        <line x1="0" y1="32" x2="178" y2="32" stroke="currentColor" stroke-width="0.75" opacity="0.4" />
+        <text
+          x="0"
+          y="46"
+          font-family="JetBrains Mono, monospace"
+          font-size="9"
+          letter-spacing="2"
+          font-weight="500"
+        >
+          HEATING + COOLING
+        </text>
+        <text
+          x="148"
+          y="46"
+          font-family="JetBrains Mono, monospace"
+          font-size="8"
+          letter-spacing="1.5"
+          font-weight="500"
+          opacity="0.55"
+        >
+          EST·CLT
+        </text>
+      </g>
+    </svg>
+  ) : (
+    <svg
+      viewBox="0 0 52 52"
+      xmlns="http://www.w3.org/2000/svg"
+      class={className}
+      role="img"
+      aria-label="QH"
+    >
+      <rect x="0" y="0" width="52" height="52" rx="2" fill="currentColor" />
+      <text
+        x="26"
+        y="38"
+        text-anchor="middle"
+        font-family="Fraunces, serif"
+        font-weight="900"
+        font-size="30"
+        fill="var(--color-paper)"
+        font-style="italic"
+      >
+        QH
+      </text>
+    </svg>
+  )
+}

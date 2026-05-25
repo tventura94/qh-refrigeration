@@ -4,20 +4,16 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
-  image?: string;
 }
 
 const {
-  title = "QH Refrigeration & Cooling | Charlotte, NC Commercial Refrigeration & HVAC",
-  description = "Charlotte's specialist team for commercial refrigeration, walk-in coolers, ice machines, and residential cooling. 24/7 service across Mecklenburg County and the greater Queen City.",
-  image = "/og-img.png",
+  title = "QH Refrigeration, Heating & Cooling | Charlotte, NC",
+  description = "Charlotte's specialist crew for commercial refrigeration, walk in coolers, ice machines, and full service HVAC. 24/7 service across Mecklenburg County and the greater Queen City.",
 } = Astro.props;
 
 const absoluteBase = "https://qh-refrigeration.netlify.app";
-const ogImage = new URL(image, absoluteBase).href;
 const canonical = new URL(Astro.url.pathname, absoluteBase).href;
-
-const siteName = "QH Refrigeration & Cooling";
+const siteName = "QH Refrigeration, Heating & Cooling";
 ---
 
 <!doctype html>
@@ -25,14 +21,13 @@ const siteName = "QH Refrigeration & Cooling";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#0b0f14" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200;12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300;9..144,500;9..144,700;9..144,900&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
 
@@ -46,20 +41,12 @@ const siteName = "QH Refrigeration & Cooling";
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:image:secure_url" content={ogImage} />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1731" />
-    <meta property="og:image:height" content="909" />
-    <meta property="og:image:alt" content={siteName} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:image:alt" content={siteName} />
   </head>
-  <body class="bg-[var(--color-cream)] text-[var(--color-ink)]">
+  <body>
     <slot />
   </body>
 </html>

@@ -1,0 +1,77 @@
+---
+import Logo from "./Logo.astro";
+
+const navItems = [
+  { label: "Services", href: "#services" },
+  { label: "Service Area", href: "#service-area" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
+];
+
+const tickerItems = [
+  "WALK IN COOLERS",
+  "ICE MACHINES",
+  "REACH IN FREEZERS",
+  "CENTRAL AC",
+  "HEAT PUMPS",
+  "GAS FURNACES",
+  "MINI SPLITS",
+  "PREP TABLES",
+  "24 / 7 EMERGENCY",
+  "CHARLOTTE NC",
+];
+---
+
+<header class="sticky top-0 z-50 bg-[var(--color-paper)]/95 backdrop-blur supports-[backdrop-filter]:bg-[var(--color-paper)]/85">
+  <div class="bg-[var(--color-ink)] text-[var(--color-paper)] overflow-hidden border-b border-[var(--color-ink)]">
+    <div class="flex whitespace-nowrap font-mono text-[10px] tracking-[0.32em] py-2 ticker">
+      {[...tickerItems, ...tickerItems, ...tickerItems].map((item) => (
+        <span class="px-6 inline-flex items-center gap-6">
+          {item}
+          <span class="text-[var(--color-ember-light)]">◆</span>
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <div class="rule-double">
+    <div class="max-w-[1400px] mx-auto px-5 sm:px-8 py-5 flex items-center justify-between gap-6 flex-nowrap">
+      <a href="#top" class="text-[var(--color-ink)] shrink-0">
+        <Logo class="h-12 md:h-14 w-auto" />
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1 shrink-0">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="group relative px-4 py-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--color-ink-soft)] hover:text-[var(--color-ember)] transition-colors"
+          >
+            <span class="opacity-50 mr-2 group-hover:opacity-100 transition-opacity">/</span>
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="flex items-center gap-3 shrink-0">
+        <a
+          href="tel:7045550142"
+          class="hidden md:flex flex-col items-end leading-tight border-r border-[var(--color-rule)] pr-4"
+        >
+          <span class="font-mono text-[9px] uppercase tracking-[0.28em] text-[var(--color-ink-muted)]">
+            Dispatch · 24/7
+          </span>
+          <span class="font-display text-xl font-bold text-[var(--color-ink)] tabular-nums">
+            704·555·0142
+          </span>
+        </a>
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 bg-[var(--color-ember)] text-[var(--color-paper)] font-mono text-[11px] uppercase tracking-[0.18em] px-5 py-3 hover:bg-[var(--color-ember-deep)] transition-colors pulse-ember"
+        >
+          <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-paper)]"></span>
+          Book Service
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
